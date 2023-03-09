@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Weather</title>
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/4/darkly/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body
+    style="
+      margin: 0px;
+      padding: 0px;
+      background-image: linear-gradient(to right, #70c5e8, #229dd0);
+      font-family: 'Mulish', sans-serif;
+    "
+  >
+    <div
+      class="custom-navbar m-0 p-0"
+      style="background-color: #094d74; margin: 0px; padding: 0px;"
+    >
+      <div class="row mx-0 py-1">
+        <div class="col-6">
+          <h4>Pocket Weather</h4>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <div class="col-9">
+              <form id="location-input"
+              >
+                <input
+                  style="
+                    background-color: white;
+                    color: black;
+                    outline-style: none;
+                    float: left;
+                    border: none;
+                    font-family: helvetica;
+                  "
+                  class="form-control border mx-0"
+                  type="search"
+                  placeholder="Enter Location"
+                  aria-label="Search"
+                  id="input-city"
+                  value=""
+                />
+              </form>
+
+            </div>
+            <div class="col-2" style="font-size: 2rem; display: flex; justify-content: center">
+              <a id="search-button" href="#"><i style="font-size: 2rem; display: flex; justify-content: center;" class="fa fa-search"></i></a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Weather Display -->
+    <div class="container">
+      <div class="row p-0 m-0 main-container">
+        <div class="search-container"></div>
+        <div class="col-xl-7 col-lg-6 col-md-6 col-sm-12 mx-auto mt-5 toClear">
+          <div class="row">
+            <div class="col-12 text-center mx-auto" id="d-location"></div>
+            <div class="col-12"></div>
+            <div
+              class="col-12 p-0"
+              style="
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+              "
+            >
+              <img
+                class="p-0 m-0"
+                src=""
+                id="d-icon"
+                style="height: 100%; min-height: 150px; width: auto;"
+              />
+            </div>
+            <div class="col-12 p-0 m-0 text-center" style="
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+          ">
+              <div class="row p-0 m-0">
+                <div class="col-auto p-0 m-0 ">
+                  <h2 style="font-size: 4rem;" id="d-degrees-number"></h2>
+                </div>
+                <div class="col-2 pt-3 ml-3" id="change-units" >
+                  <a href="#" class="text-white change-celsius">C</a> <br />
+                </div>
+              </div>
+            </div>
+            <div class="col-12 text-center" id="d-description"></div>
+            <div class="col-12 text-center" id="d-last-updated"></div>
+            <div class="col-12 text-center border" id="d-last-updated">
+              <div class="row details"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="daily-container">
+      <div class="row p-0 m-0">
+        <div class="col-12 mt-5">Daily 5-day Forecast</div>
+        <div class="col-12 mx-auto py-2 px-4 border">
+          <div
+            class="row daily-forecast"
+            style="display: flex; flex-direction: row; justify-content: center;"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <!-- </nav> -->
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+  
+
+ 
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p class="copyright-text">
+              Copyright &copy; 2023 All Rights Reserved by
+              Akhmadillo Mamirov.
+            </p>
+          </div>
+
+          <div class="col-12">
+            <ul class="social-icons ">
+              <li>
+                <a class="github" href="https://github.com/akhmadmamirov"><i class="fa fa-github"></i></a>
+              </li>
+              <li>
+                <a class="linkedin" href="https://www.linkedin.com/in/akhmadillomamirov/"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  <script src="storage.js"></script>
+  <script src="weather.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
