@@ -7,7 +7,7 @@ class Weather {
   }
 
   async fetchApiKey() {
-    const response = await fetch('http://localhost:3000/apikey');
+    const response = await fetch('https://main--jazzy-lamington-7f5c27.netlify.app/apikey');
     const { apiKey, geoApi } = await response.json();
     this.apiKey = apiKey;
     this.geoApi = geoApi;
