@@ -7,7 +7,7 @@ class Weather {
   }
 
   async fetchApiKey() {
-    const response = await fetch('https://idyllic-cranachan-b5df33.netlify.app/apiKey', {
+    const response = await fetch('https://myserver-yxlj.onrender.com/apiKey', {
     headers: {
       'Content-Type': 'application/json'
     }
