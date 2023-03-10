@@ -25,7 +25,7 @@ class DisplayWeather {
             <div class="row">
                 <div class="col-12 text-center mt-2">${curDate}</div>
                 <div class="col-12 " style="display: flex; flex-direction: row; justify-content: center">  
-                    <img src="http://openweathermap.org/img/wn/${icon}@2x.png">
+                    <img src="https://openweathermap.org/img/wn/${icon}@2x.png">
                 </div>
        
                 <div class="col-12 daily-high" style="display: flex; flex-direction: row; justify-content: center"><h4>${temp}<span>°</span></h4></div>
@@ -48,7 +48,7 @@ class DisplayWeather {
             <div class="col-4  item1">Humidity: ${data.main.humidity}%</div>
             <div class="col-4  item2">wind speed: ${data.wind.speed} mph</div>
         `
-        this.mainImg.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+        this.mainImg.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
         this.mainDeg.textContent = `${data.main.temp}`;
         this.dLocation.innerHTML = `<h4>${data.name}, ${data.sys.country}</h4>`
         this.dDescription.textContent = `${data.weather[0].description}`
