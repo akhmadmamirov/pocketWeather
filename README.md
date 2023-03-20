@@ -1,6 +1,6 @@
 # pocketWeather
 
-Build an Educative Tool to learn about US States through visualizing found states with OOPython, Turtle and Numpy libraries
+
 
 
 ## Required Features
