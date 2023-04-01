@@ -6,7 +6,7 @@ const searchBtn = document.getElementById("search-button");
 
 
 // Define the base URL for the API calls
-const API_BASE_URL = "https://myserver-yxlj.onrender.com";
+const API_BASE_URL = "https://myserver-1fc5.onrender.com";
 
 // Init Ui object
 const ui = new DisplayWeather();
