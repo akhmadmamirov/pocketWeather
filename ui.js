@@ -41,6 +41,7 @@ class DisplayWeather {
 
     // Display the Weather Right Now
     DisplayNow(data){
+        
         let icon = data.weather[0].icon
         let output = ""
         output += `

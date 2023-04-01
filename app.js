@@ -1,53 +1,55 @@
-// Searh Input
-const search = document.getElementById("location-input")
+// Search Input
+const search = document.getElementById("location-input");
 
 // Search Button
-const searchBtn = document.getElementById("search-button")
+const searchBtn = document.getElementById("search-button");
 
-
-// Init Weather Object
-const weather = new Weather("san francisco");
+// Define the base URL for the API calls
+const API_BASE_URL = "http://localhost:3000";
 
 // Init Ui object
 const ui = new DisplayWeather();
 
 // Call getCurrentWeather method and log the weather data
-weather.getCurrentWeather()
-  .then(data => ui.Display(data))
+fetch(`${API_BASE_URL}/weather/current/san%20francisco`)
+  .then(response => response.json())
+  .then(data => ui.DisplayNow(data))
   .catch(error => console.log(error));
 
-weather.getWeatherNow()
-  .then(data => ui.DisplayNow(data))
-  .catch(err => console.log(err))
+fetch(`${API_BASE_URL}/weather/forecast/san%20francisco`)
+  .then(response => response.json())
+  .then(data => ui.Display(data))
+  .catch(err => console.log(err));
 
 // Change weather Data from Search Input
-search.addEventListener("keyup", function(e) {
-  if (e.key == "Enter") {
-    let newCity  = e.target.value.toLowerCase()
-    weather.changeLocation(newCity)
-    weather.getCurrentWeather()
-    .then(data => ui.Display(data))
-    .catch(error => console.log(error));
-  
-    weather.getWeatherNow()
-    .then(data => ui.DisplayNow(data))
-    .catch(err => console.log(err))
+search.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    changeWeatherData();
+    e.preventDefault();
   }
-})
+});
 
 // Change weather Data from Search Btn
 searchBtn.addEventListener("click", function(e) {
-  // Input City
-  const inputCity = document.getElementById("input-city").value.toLowerCase()
+  changeWeatherData();
+  e.preventDefault();
+});
 
-  let newCity  = inputCity
-    weather.changeLocation(newCity)
-    weather.getCurrentWeather()
-    .then(data => ui.Display(data))
-    .catch(error => console.log(error));
-  
-    weather.getWeatherNow()
+
+function changeWeatherData() {
+  // Input City
+  const inputCity = document.getElementById("input-city").value.toLowerCase();
+  const encodedCity = encodeURIComponent(inputCity); // Encode inputCity
+  console.log(encodedCity);
+  fetch(`${API_BASE_URL}/weather/current/${encodedCity}`)
+    .then(response => response.json())
     .then(data => ui.DisplayNow(data))
-    .catch(err => console.log(err))
-  }
-)
+    .catch(error => console.log(error));
+
+  fetch(`${API_BASE_URL}/weather/forecast/${encodedCity}`)
+    .then(response => response.json())
+    .then(data => ui.Display(data))
+    .catch(err => console.log(err));
+}
+
+
