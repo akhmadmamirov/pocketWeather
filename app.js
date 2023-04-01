@@ -41,7 +41,6 @@ function changeWeatherData() {
   // Input City
   const inputCity = document.getElementById("input-city").value.toLowerCase();
   const encodedCity = encodeURIComponent(inputCity); // Encode inputCity
-  console.log(encodedCity);
   fetch(`${API_BASE_URL}/weather/current/${encodedCity}`)
     .then(response => response.json())
     .then(data => ui.DisplayNow(data))
