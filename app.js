@@ -4,8 +4,9 @@ const search = document.getElementById("location-input");
 // Search Button
 const searchBtn = document.getElementById("search-button");
 
+
 // Define the base URL for the API calls
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://myserver-yxlj.onrender.com";
 
 // Init Ui object
 const ui = new DisplayWeather();
