@@ -9,9 +9,9 @@
 The following **required** functionality is completed:
 
 * Developed a web app that returns and forecasts 5-day weather information for a specified location using Vanilla JavaScript and the OpenWeatherMap API 
-* Processed complex user input such as any combination of city, country, and state address by using the Google Geocoding API 
+* Processed complex user input such as any combination of city, country, and street address by using the Google Geocoding API
 * Reduced the load time of website by 70 % (3ms to 0.8ms) by refactoring the program to use plain JavasScript which removed framework overhead 
-* Integrated API calls by creating a proxy server using Node.js and hid API keys from client side
+* Integrated API calls by creating a proxy server using Node.js and hid API keys using environmental variables
 
 
 ## Video Walkthrough
