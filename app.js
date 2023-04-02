@@ -1,6 +1,6 @@
 // Get the loader element
 const loader = document.getElementById("loader");
-
+const units = document.querySelector(".change-celsius")
 // Show the loader when data is being fetched
 loader.classList.remove("loader")
 
@@ -17,19 +17,24 @@ const API_BASE_URL = "https://myserver-1fc5.onrender.com";
 const ui = new DisplayWeather();
 
 // Call getCurrentWeather method and log the weather data
-fetch(`${API_BASE_URL}/weather/current/san%20francisco`)
+fetch(`${API_BASE_URL}/weather/current/mountain%20view`)
   .then(response => response.json())
   .then(data => {
     ui.DisplayNow(data);
     //Removing Loader
     loader.classList.add("loader");
+    //Showing Units
+    units.classList.remove("loader")
+    
   })
   .catch(error => console.log(error));
 
-fetch(`${API_BASE_URL}/weather/forecast/san%20francisco`)
+fetch(`${API_BASE_URL}/weather/forecast/mountain%20view`)
   .then(response => response.json())
   .then(data => ui.Display(data))
   .catch(err => console.log(err));
+
+  
 
 // Change weather Data from Search Input
 search.addEventListener("keydown", function(e) {
@@ -53,7 +58,11 @@ function changeWeatherData() {
     .then(response => response.json())
     .then(data => {
       ui.DisplayNow(data);
+      //Removing Loader
       loader.classList.add("loader");
+      //Showing Units
+      units.classList.remove("loader")
+
     })
     .catch(error => console.log(error));
 
