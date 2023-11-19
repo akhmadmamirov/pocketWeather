@@ -4,7 +4,7 @@
 
 
 ## Required Features
-## Vanilla JavaScript, Node.js, HTML/CSS 
+* Vanilla JavaScript, Node.js, HTML/CSS 
 
 The following **required** functionality is completed:
 
@@ -25,4 +25,4 @@ GIF created with Giphy
 
 ## Live Website
 https://pocketweather.onrender.com/
-# newPocketWeather
+
